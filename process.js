@@ -1,6 +1,3 @@
-const { dotenv } = require("dotenv");
-dotenv.config();
-
 document.addEventListener("DOMContentLoaded", () => {
     const API_KEY = process.env.API_KEY;
 
