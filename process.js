@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const weatherField = document.getElementById("weather");
     const errorField = document.getElementById("error");
 
-    // ...existing code...
     async function FetchData(loc) {
         try {
             spinner.classList.remove("hidden"); // Show spinner
@@ -56,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "feels-like"
         ).textContent = `Feels Like: ${feelsLikeC}°C`;
     }
-    // ...existing code...
 
     function UpdateTemperature(temp) {
         if (!temp) {
