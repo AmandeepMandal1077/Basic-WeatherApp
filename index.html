@@ -8,7 +8,7 @@
     </head>
     <body
         id="body-container"
-        class="relative bg-gradient-to-r from-blue-400 to-indigo-700 min-h-screen flex items-center justify-center p-4"
+        class="relative bg-gradient-to-r from-yellow-300 to-blue-500 min-h-screen flex items-center justify-center p-4"
     >
         <!-- Loading Spinner -->
         <div
@@ -22,9 +22,9 @@
 
         <div
             id="main-container"
-            class="bg-white rounded-2xl shadow-2xl p-6 max-w-3xl transform transition-all duration-700 text-center"
+            class="bg-yellow-50 rounded-2xl shadow-2xl p-6 max-w-3xl transform transition-all duration-700 text-center"
         >
-            <h1 class="text-3xl font-bold mb-5 text-indigo-800">Weather App</h1>
+            <h1 class="text-3xl font-bold mb-5 text-blue-600">Weather App</h1>
 
             <div
                 id="search-container"
@@ -32,31 +32,27 @@
             >
                 <input
                     id="location-input"
-                    class="flex-grow border-2 border-gray-300 p-2 rounded-l-lg focus:outline-none focus:ring focus:ring-indigo-300 max-w-sm"
+                    class="flex-grow border-2 border-gray-300 p-2 rounded-l-lg focus:outline-none focus:ring focus:ring-blue-400 max-w-sm"
                     type="text"
                     placeholder="Enter location"
                     autocomplete="off"
                 />
                 <button
                     id="search-btn"
-                    class="bg-indigo-600 text-white px-4 py-2 rounded-r-lg hover:bg-indigo-700 transition-colors"
+                    class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700 transition-colors"
                 >
                     Get Weather
                 </button>
             </div>
 
-            <!-- Updated grid structure -->
             <div
                 id="weather-info"
                 class="hidden opacity-0 transition-opacity duration-700 grid grid-cols-2 gap-4 text-left"
             >
-                <!-- Temperature row spans both columns -->
                 <p
                     id="temperature"
                     class="col-span-2 text-xl font-semibold border-b border-gray-300 pb-2"
                 ></p>
-
-                <!-- Other details in two columns -->
                 <p
                     id="location"
                     class="text-lg border-b border-gray-200 pb-1"
