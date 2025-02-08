@@ -1,5 +1,8 @@
+const { dotenv } = require("dotenv");
+dotenv.config();
+
 document.addEventListener("DOMContentLoaded", () => {
-    const API_KEY = `85f4cf597547a93c0951c9bddb913c1e`;
+    const API_KEY = process.env.API_KEY;
 
     const inputField = document.getElementById("location-input");
     const findBtn = document.getElementById("search-btn");
@@ -11,10 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function FetchData(loc) {
         try {
-            spinner.classList.remove("hidden"); // Show spinner
+            spinner.classList.remove("hidden");
             let url = `https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=${API_KEY}`;
             const response = await fetch(url);
-            spinner.classList.add("hidden"); // Hide spinner
+            spinner.classList.add("hidden");
 
             if (!response.ok) {
                 throw new Error("City not found");
