@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const API_KEY = process.env.API_KEY;
-
     const inputField = document.getElementById("location-input");
     const findBtn = document.getElementById("search-btn");
     const weatherInfo = document.getElementById("weather-info");
@@ -12,14 +10,15 @@ document.addEventListener("DOMContentLoaded", () => {
     async function FetchData(loc) {
         try {
             spinner.classList.remove("hidden");
-            let url = `https://api.openweathermap.org/data/2.5/weather?q=${loc}&appid=${API_KEY}`;
+            let url = `/.netlify/functions/fetchWeather?location=${loc}`;
             const response = await fetch(url);
+            const data = await response.json();
+
             spinner.classList.add("hidden");
 
-            if (!response.ok) {
-                throw new Error("City not found");
+            if (data.error) {
+                throw new Error(data.error);
             }
-            const data = await response.json();
             return data;
         } catch (msg) {
             spinner.classList.add("hidden");
